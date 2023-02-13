@@ -3,11 +3,13 @@ package com.along.seckill.controller;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author huanglong
  * @date 2020-02-23
  */
+@RestController
 public class LBController {
 
     @Value("${server.port}")
