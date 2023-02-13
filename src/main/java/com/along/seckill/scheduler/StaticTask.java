@@ -29,7 +29,7 @@ public class StaticTask {
     private GoodsService goodsService;
 
     //每秒执行一次
-    @Scheduled(cron = "0 0/5 * * * ?")
+    @Scheduled(cron = "0 0/2 * * * ?")
     public void doStatic() throws TemplateException, IOException {
         //获取模板对象
         Template template = freeMarkerConfig.getTemplate("goods.ftl") ;
@@ -42,6 +42,8 @@ public class StaticTask {
             param.put("covers" , goodsService.findCovers(gid)) ;
             param.put("details" , goodsService.findDetails(gid)) ;
             param.put("params" , goodsService.findParams(gid)) ;
+
+            System.out.println(param.toString());
 
             File targetFile = new File("/Users/along/Desktop/template/good" + gid + ".html");
             FileWriter out = new FileWriter(targetFile) ;
