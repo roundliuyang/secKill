@@ -85,7 +85,7 @@ public class GoodsController {
             param.put("details" , goodsService.findDetails(gid)) ;
             param.put("params" , goodsService.findParams(gid)) ;
 
-            File targetFile = new File("/Users/along/Desktop/template/good1/" + gid + ".html");
+            File targetFile = new File("/Users/along/Desktop/template/good" + gid + ".html");
             FileWriter out = new FileWriter(targetFile) ;
             template.process(param , out);
             out.close();
